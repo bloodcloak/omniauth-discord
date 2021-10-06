@@ -18,7 +18,9 @@ module OmniAuth
 
       info do
         {
-          name: raw_info['username'],
+          name: "#{raw_info['username']}##{raw_info['discriminator']}",
+		  last_name: raw_info['id'],
+		  uuid: raw_info['id'],
           email: raw_info['verified'] ? raw_info['email'] : nil,
           # CDN is still cdn.discordapp.com
           image: raw_info['avatar'].present? ? "https://cdn.discordapp.com/avatars/#{raw_info['id']}/#{raw_info['avatar']}" : nil,
