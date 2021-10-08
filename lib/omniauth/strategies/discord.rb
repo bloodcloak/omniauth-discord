@@ -18,13 +18,13 @@ module OmniAuth
 
       info do
         {
-          name: "#{raw_info['username']}##{raw_info['discriminator']}",
-          email: raw_info['verified'] ? raw_info['email'] : "#{raw_info['id']}@discord.id}",
+          'name' => "#{raw_info['username']}##{raw_info['discriminator']} (#{raw_info['id']})",
+          'email' => raw_info['verified'] ? raw_info['email'] : "#{raw_info['id']}@discord.uid}",
           # CDN is still cdn.discordapp.com
-          image: raw_info['avatar'].present? ? "https://cdn.discordapp.com/avatars/#{raw_info['id']}/#{raw_info['avatar']}" : nil,
-		  urls: {
-			discord: "https://discord.com/users/#{raw_info['id']}",
-            Blog: "https://discord.com/users/#{raw_info['id']}",
+          'image' => raw_info['avatar'].present? ? "https://cdn.discordapp.com/avatars/#{raw_info['id']}/#{raw_info['avatar']}" : nil,
+		  'urls' => {
+			'Discord' => "https://discord.com/users/#{raw_info['id']}",
+            'Blog' => "https://discord.com/users/#{raw_info['id']}",
           },
         }
       end
